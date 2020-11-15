@@ -9,7 +9,7 @@
   modified 30 Aug 2011
   by Tom Igoe
 
-  Modified for 'pinsPlus use Aug 2020 by Rev Phil
+  Modified for 'Esduino use Aug 2020 by Rev Phil
 
   This example code is in the public domain.
 
@@ -19,7 +19,7 @@
 #include <Esduino.h>
 #include "pitches.h"
 
-PinsPlus pp;  // an object for the PinsPlus library
+Esduino pp;  // an object for the Esduino library
 
 #define GUEST_I2C_ADDRESS 9
 #define INTERRUPT_PIN 2
@@ -44,9 +44,9 @@ void setup() {
   WiFi.mode(WIFI_OFF);    // turn WiFi OFF
   WiFi.forceSleepBegin(); // put WiFi to sleep
   delay(1000);
-  printf("\r\n\r\nPinsPlus ESP8266 Host...\r\n");
-  // start PinsPlus, (I2C address, Interrupt pin)
-  if (pp.begin(GUEST_I2C_ADDRESS, INTERRUPT_PIN) < 0) pp.perror("PinsPlus begin:");
+  printf("\r\n\r\nEsduino ESP8266 Host...\r\n");
+  // start Esduino, (I2C address, Interrupt pin)
+  if (pp.begin(GUEST_I2C_ADDRESS, INTERRUPT_PIN) < 0) pp.perror("Esduino begin:");
 
   // OK, we've started up correctly, let's print out the details of the Guest MCU
   pp.printDetails();
